@@ -23,9 +23,9 @@ const App = () => {
   }, []);
 
   const fetchOrders = async (type) => {
-    const res = await fetch(`http://localhost:3000/api/orders/${type}`);
+    const res = await fetch(`https://stakehub-j1rz.onrender.com/api/orders/${type}`);
     const data = await res.json();
-    console.log(data);
+    //console.log(data);
     if (type === "pending")
       setPending(data);
     else
@@ -35,8 +35,8 @@ const App = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
-    await axios.post('http://localhost:3000/api/orders', form);
+    //console.log(form);
+    await axios.post('https://stakehub-j1rz.onrender.com/api/orders', form);
     fetchOrders('pending');
     fetchOrders('completed');
 
